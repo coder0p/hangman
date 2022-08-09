@@ -37,7 +37,7 @@ def get_status(secret_word, guessed_letters, turns_left):
 def process_turn(secret_word, current_guess, guessed_letters, turns_left):
     if current_guess in guessed_letters:
         print(f"You already guessed the letter '{current_guess}'")
-        return turns_left, ALREADY_GUESSED,
+        return turns_left, ALREADY_GUESSED
     if secret_word == mask_word(secret_word, guessed_letters + [current_guess]):
         return turns_left, WON
     if turns_left == 1:
@@ -65,5 +65,7 @@ def main():
             print(f"You LOST, the word was {secret_word}")
             # print(lives_visual_dict[0]) #printing hangman visual in last turn
             break
+
+
 if __name__ == "__main__":
     main()
